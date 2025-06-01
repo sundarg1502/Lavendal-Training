@@ -32,6 +32,19 @@ public class Main {
         System.out.println(hm);
     }
 
+    public static String removeDplicates(String str){
+        StringBuilder result = new StringBuilder("");
+        HashSet<Character> seen = new HashSet<>();
+
+        for (char ch:str.toCharArray()){
+            if(!seen.contains(ch)){
+                seen.add(ch);
+                result.append(ch);
+            }
+        }
+        return result.toString();
+    }
+
     public static String reverse(String str){
         StringBuffer sf = new StringBuffer("");
         for(int i=str.length()-1;i>=0;i--){
@@ -44,15 +57,44 @@ public class Main {
         StringBuffer sf = new StringBuffer("");
 
         for(int i=0;i<str.length();i++){
-            Char curr = str.charAt(i);
-            
+            char curr = str.charAt(i);
+            // System.out.println(Character.isLowerCase(curr));
             if(Character.isUpperCase(curr)){
-                sf.append(Character.toUpperCase(curr));
-            }else{
                 sf.append(Character.toLowerCase(curr));
+            }else{
+                sf.append(Character.toUpperCase(curr));
             }
         }
         return sf.toString();
+    }
+
+    public static Boolean anagram(String s1, String s2){
+        Map<Character,Integer> hm1 = new HashMap<>();
+        Map<Character,Integer> hm2 = new HashMap<>();
+
+        for(char ch:s1.toCharArray()){
+            hm1.put(ch,hm1.getOrDefault(ch,0)+1);
+        }
+        for(char ch:s2.toCharArray()){
+            hm2.put(ch,hm2.getOrDefault(ch,0)+1);
+        }
+        
+        return hm1.equals(hm2);
+    }
+
+    public static void capitalizeFirst(String str){
+        char cap = Character.toUpperCase(str.charAt(0));
+        System.out.println(str.replace(str.charAt(0),cap));
+    }
+
+    public static  int countWordOcc(String sent, String f){
+        HashMap<String,Integer> hm = new HashMap<>();
+
+        for(String s:sent.split(" "))  {
+            hm.put(s,hm.getOrDefault(s,0)+1);
+        }
+
+        return hm.getOrDefault(f,-1);
     }
 
     public static void main(String[] args) {
@@ -65,12 +107,23 @@ public class Main {
         // task 2
         // Count_vowels_cononents("Java Programming");
 
+        // task 3
+        // System.out.println(removeDplicates("programming"));
+
         // task 4
         // System.out.println(reverse("Hello"));
 
+        // task 5
+        // System.out.println(anagram("listen","sielent"));
+
+        // task 6
+        // capitalizeFirst("java is fun"); 
+
+        // task 7
+        System.out.println(countWordOcc("Java is simple. Java is powerful","simple."));
+
         // task 8
-        System.out.println(toggle("hello"));
-        ArrayList
+        // System.out.println(toggle("hello"));
 
     }
 }
