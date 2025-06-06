@@ -1,0 +1,41 @@
+Time and Space complexity:
+
+1) B) O(log n)
+ 
+2) A) O(n log n)
+
+3) C) O(n²)
+
+4) B) O(n)
+
+5) B) O(log n)
+
+6) B) O(1)
+
+7) B) O(1)
+
+8) C) O(1)
+
+9) B) O(n²)
+
+10) C) O(n)
+
+11) A) O(n)
+
+12) A) O(n)
+
+13) B) O(1)
+
+14) C) O(n√n)
+
+15) B) O(n)
+
+16) B) Merge Sort
+
+17) C) O(n³)
+
+18) A) O(n)
+
+19) A) O(n²)
+
+20) C) O(n)
